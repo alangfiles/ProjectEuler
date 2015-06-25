@@ -17,7 +17,7 @@ function findLargestPrimeFactor(number){
     for(var i = 2; i < Math.sqrt(number); i++){
         if(sievedPrimes[i] == undefined ){
             for(var degree=1, j = i << 1; j < Math.sqrt(number); j = (i << 1)+(++degree*i)){//we only care about primes < sqrt which greatly limits the search
-                sievedPrimes[j] = false; 
+                sievedPrimes[j] = false;
             }
             if(number%i == 0){
                 largestPrimeFactor = i;
