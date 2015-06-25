@@ -9,7 +9,7 @@ function largestPalindromFinder(){
     for(var firstNum = 999; firstNum > 0; firstNum--){
         for(var secondNum = 999; secondNum > 0; secondNum--){
             var sum = firstNum*secondNum;
-            if(isPalindrome(sum.toString())){
+            if(sum.toString() == sum.toString().split("").reverse().join("")){
                 if(sum > largestPalindrome){
                     largestPalindrome = sum;
                     constituents = [firstNum, secondNum];
@@ -19,12 +19,4 @@ function largestPalindromFinder(){
     }
 
     return constituents;
-}
-
-function isPalindrome(string1){
-    //kind weak palindrome checker, but will work for numbers.
-    if(string1 == string1.split("").reverse().join("")){
-        return true;
-    }
-    return false;
 }
